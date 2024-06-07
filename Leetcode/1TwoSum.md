@@ -31,6 +31,16 @@ You can return the answer in any order.
 **Output:** [0,1]
 
 ## Code 
-``` python
 
+### Hash Table
+
+``` python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashtable = dict()
+        for i, num in enumerate(nums):
+            if target - num in hashtable:
+                return [hashtable[target - num], i]
+            hashtable[num] = i
+        return []
 ```
